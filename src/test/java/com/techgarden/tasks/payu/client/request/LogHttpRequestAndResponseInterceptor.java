@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 
-public class LogRequestInterceptor implements ClientHttpRequestInterceptor {
+public class LogHttpRequestAndResponseInterceptor implements ClientHttpRequestInterceptor {
 
-    private static final Logger logger = LoggerFactory.getLogger(LogRequestInterceptor.class);
+    private static final Logger logger = LoggerFactory.getLogger(LogHttpRequestAndResponseInterceptor.class);
 
     @Override
     public ClientHttpResponse intercept(HttpRequest request, byte[] requestBody, ClientHttpRequestExecution execution) throws IOException {

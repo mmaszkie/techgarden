@@ -2,6 +2,7 @@ package com.techgarden.tasks.payu.client.request.entities;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.techgarden.tasks.payu.client.request.entities.actions.BuildAndValidate;
+import com.techgarden.tasks.payu.client.request.entities.AddressData.CountryCode;
 
 import static org.apache.commons.lang3.ObjectUtils.allNotNull;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
@@ -9,7 +10,7 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ShippingMethod {
 
-    private AddressData.CountryCode country;
+    private CountryCode country;
     private Long price;
     private String name;
 
@@ -23,7 +24,7 @@ public class ShippingMethod {
         this.name = builder.name;
     }
 
-    public AddressData.CountryCode getCountry() {
+    public CountryCode getCountry() {
         return country;
     }
 
@@ -37,7 +38,7 @@ public class ShippingMethod {
 
     public static class Builder extends BuildAndValidate<ShippingMethod> {
 
-        private AddressData.CountryCode countryCode;
+        private CountryCode countryCode;
         private Long price;
         private String name;
 

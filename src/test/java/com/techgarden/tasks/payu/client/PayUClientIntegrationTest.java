@@ -1,6 +1,6 @@
 package com.techgarden.tasks.payu.client;
 
-import com.techgarden.tasks.payu.client.request.LogRequestInterceptor;
+import com.techgarden.tasks.payu.client.request.LogHttpRequestAndResponseInterceptor;
 import com.techgarden.tasks.payu.client.request.OrderCreateRequest;
 import com.techgarden.tasks.payu.client.request.entities.*;
 import com.techgarden.tasks.payu.client.response.OrderCreateResponse;
@@ -11,9 +11,9 @@ import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.ZonedDateTime;
-import java.util.Collections;
 import java.util.UUID;
 
+import static java.util.Collections.singletonList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PayUClientIntegrationTest {
@@ -24,15 +24,15 @@ public class PayUClientIntegrationTest {
 
     private static PayUClient client;
 
-    private static RestTemplate prepareRestTemplate() {
+    private static RestTemplate getLoggingRestTemplate() {
         RestTemplate restTemplate = new RestTemplate(new BufferingClientHttpRequestFactory(new SimpleClientHttpRequestFactory()));
-        restTemplate.setInterceptors(Collections.singletonList(new LogRequestInterceptor()));
+        restTemplate.setInterceptors(singletonList(new LogHttpRequestAndResponseInterceptor()));
         return restTemplate;
     }
 
     @BeforeClass
     public static void beforeClass() {
-        client = new PayUClient(prepareRestTemplate(), SANDBOX_CREATE_ORDER_URL);
+        client = new PayUClient(getLoggingRestTemplate(), SANDBOX_CREATE_ORDER_URL);
     }
 
     @Test
