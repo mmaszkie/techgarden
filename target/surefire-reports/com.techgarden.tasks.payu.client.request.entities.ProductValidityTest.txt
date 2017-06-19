@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.techgarden.tasks.payu.client.request.entities.ProductValidityTest
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in com.techgarden.tasks.payu.client.request.entities.ProductValidityTest
