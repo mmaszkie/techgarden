@@ -5,7 +5,7 @@ import com.techgarden.tasks.trees.model.coniferous.ConiferousTree;
 import com.techgarden.tasks.trees.model.deciduous.DeciduousTree;
 import org.junit.Test;
 
-import java.util.Set;
+import java.util.Iterator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -19,21 +19,21 @@ public class TreesTest {
         Trunk trunk = tree.trunk;
         assertTrunk(trunk, 0);
 
-        Set<Branch> branches = tree.top.branches;
-        assertTop(branches, 0);
+        Top top = tree.top;
+        assertTop(top, 0);
 
         // when
         tree.grow();
 
         // then
         assertTrunk(trunk, 0.1);
-        assertTop(branches, 1);
+        assertTop(top, 1);
 
-        Branch branch = branches.iterator().next();
+        Branch branch = (Branch) top.branches.iterator().next();
         assertBranch(branch, 1);
 
-        Set<Leaf> leafs = branch.leafs;
-        assertLeaf(leafs.iterator().next(), Color.GREEN, 0.1);
+        Iterator<Leaf> leafsIterator = branch.leafs.iterator();
+        assertLeaf(leafsIterator.next(), Color.GREEN, 0.1);
     }
 
     @Test
@@ -44,35 +44,34 @@ public class TreesTest {
         Trunk trunk = tree.trunk;
         assertTrunk(trunk, 0);
 
-        Set<Branch> branches = tree.top.branches;
-        assertTop(branches, 0);
+        Top top = tree.top;
+        assertTop(top, 0);
 
         // when
         tree.grow();
 
         // then
-        assertTrunk(tree.trunk, 0.2);
-        assertTop(branches, 1);
+        assertTrunk(trunk, 0.2);
+        assertTop(top, 1);
 
-        Branch branch = branches.iterator().next();
+        Branch branch = (Branch) top.branches.iterator().next();
         assertBranch(branch, 2);
 
-        Set<Leaf> leafs = branch.leafs;
-        assertLeaf(leafs.iterator().next(), Color.BROWN, 0.2);
-        assertLeaf(leafs.iterator().next(), Color.BROWN, 0.2);
+        Iterator<Leaf> leafsIterator = branch.leafs.iterator();
+        assertLeaf(leafsIterator.next(), Color.BROWN, 0.2);
+        assertLeaf(leafsIterator.next(), Color.BROWN, 0.2);
     }
 
     private void assertTrunk(Trunk trunk, double diameter) {
         assertThat(trunk.diameter).isEqualTo(diameter);
     }
 
-    private void assertTop(Set<Branch> branches, int size) {
-        assertThat(branches.size()).isEqualTo(size);
+    private void assertTop(Top top, int size) {
+        assertThat(top.branches.size()).isEqualTo(size);
     }
 
     private void assertBranch(Branch branch, int size) {
-        Set<Leaf> leafs = branch.leafs;
-        assertThat(leafs.size()).isEqualTo(size);
+        assertThat(branch.leafs.size()).isEqualTo(size);
     }
 
     private void assertLeaf(Leaf leaf, Color color, double diameter) {

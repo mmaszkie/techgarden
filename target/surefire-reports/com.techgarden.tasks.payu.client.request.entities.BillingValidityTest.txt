@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.techgarden.tasks.payu.client.request.entities.BillingValidityTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in com.techgarden.tasks.payu.client.request.entities.BillingValidityTest

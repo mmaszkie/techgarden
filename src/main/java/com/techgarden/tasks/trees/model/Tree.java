@@ -3,6 +3,7 @@ package com.techgarden.tasks.trees.model;
 public abstract class Tree<Type> {
 
     protected Trunk trunk;
+
     protected Top top;
 
     public Tree<Type> grow() {
@@ -10,5 +11,4 @@ public abstract class Tree<Type> {
         top.grow();
         return this;
     }
-
 }

@@ -1,0 +1,13 @@
+com/techgarden/tasks/payu/client/request/entities/BillingValidityTest.class
+com/techgarden/tasks/payu/client/request/entities/DeliveryValidityTest.class
+com/techgarden/tasks/payu/client/request/OrderCreateRequestValidityTest.class
+com/techgarden/tasks/payu/client/request/entities/ProductValidityTest.class
+com/techgarden/tasks/payu/client/PayUClientIntegrationTest.class
+com/techgarden/tasks/payu/client/request/entities/InvoiceValidityTest.class
+com/techgarden/tasks/trees/model/TreesTest.class
+com/techgarden/tasks/payu/client/request/entities/ShippingMethodValidityTest.class
+com/techgarden/tasks/payu/client/response/OrderCreateResponseTest.class
+com/techgarden/tasks/payu/client/request/entities/CurrencyCodeTest.class
+com/techgarden/tasks/payu/client/request/entities/PayMethodValidityTest.class
+com/techgarden/tasks/payu/client/request/LogHttpRequestAndResponseInterceptor.class
+com/techgarden/tasks/payu/client/request/entities/BuyerValidityTest.class
