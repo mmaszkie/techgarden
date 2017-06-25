@@ -55,8 +55,8 @@ public class GeolocationControllerPerformanceTest extends AbstractGeolocationCon
 
         // then
         LOG.info("Overall time for " + QUERIES_NUMER + " queries (ms): " + overallExecutionTime);
-        LOG.info("Average query execution time (ms): " + averageFor(overallExecutionTime));
-        LOG.info("Average hits per query: " + averageFor(overallCitiesFound));
+        LOG.info("Average query execution time (ms): " + average(overallExecutionTime));
+        LOG.info("Average hits per query: " + average(overallCitiesFound));
     }
 
     private Geolocation randomCity(int index) {
@@ -75,7 +75,7 @@ public class GeolocationControllerPerformanceTest extends AbstractGeolocationCon
         return Math.acos(Math.random() * 2 - 1);
     }
 
-    private double averageFor(double number) {
+    private double average(double number) {
         return number / QUERIES_NUMER;
     }
 }

@@ -41,5 +41,4 @@ public class GeolocationData {
     public Point getPoint() {
         return this.point;
     }
-
 }
