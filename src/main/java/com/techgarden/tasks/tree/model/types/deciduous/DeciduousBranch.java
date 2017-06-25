@@ -1,7 +1,7 @@
-package com.techgarden.tasks.tree.model.deciduous;
+package com.techgarden.tasks.tree.model.types.deciduous;
 
-import com.techgarden.tasks.tree.model.parts.Branch;
-import com.techgarden.tasks.tree.model.parts.Leaf;
+import com.techgarden.tasks.tree.model.elements.Branch;
+import com.techgarden.tasks.tree.model.elements.Leaf;
 
 public class DeciduousBranch extends Branch<Deciduous> {
 

@@ -1,4 +1,4 @@
-package com.techgarden.tasks.tree.model.coniferous;
+package com.techgarden.tasks.tree.model.types.coniferous;
 
 import com.techgarden.tasks.tree.model.Tree;
 

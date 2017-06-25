@@ -1,4 +1,4 @@
-package com.techgarden.tasks.tree.model.deciduous;
+package com.techgarden.tasks.tree.model.types.deciduous;
 
 import com.techgarden.tasks.tree.model.Tree;
 

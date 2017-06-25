@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @TestPropertySource(locations="classpath:test.properties")
-public class PayUClientIntegrationTest {
+public class PayUClientTest {
 
     private static final String SANDBOX_AUTHORIZATION_TOKEN = "d9a4536e-62ba-4f60-8017-6053211d3f47";
 

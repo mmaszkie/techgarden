@@ -1,8 +1,11 @@
 package com.techgarden.tasks.tree.model;
 
-import com.techgarden.tasks.tree.model.coniferous.ConiferousTree;
-import com.techgarden.tasks.tree.model.deciduous.DeciduousTree;
-import com.techgarden.tasks.tree.model.parts.*;
+import com.techgarden.tasks.tree.model.elements.Branch;
+import com.techgarden.tasks.tree.model.elements.Leaf;
+import com.techgarden.tasks.tree.model.elements.Top;
+import com.techgarden.tasks.tree.model.elements.Trunk;
+import com.techgarden.tasks.tree.model.types.coniferous.ConiferousTree;
+import com.techgarden.tasks.tree.model.types.deciduous.DeciduousTree;
 import org.junit.Test;
 
 import java.util.Iterator;
@@ -35,10 +38,7 @@ public class TreesTest {
         assertBranchSize(branch, 1);
 
         Iterator<Leaf> leafsIterator = branch.leafs.iterator();
-        Leaf leaf = leafsIterator.next();
-
-        assertLeafColor(leaf, Leaf.Color.GREEN);
-        assertLeafDiameter(leaf, 0.1);
+        assertLeafColorAndDiameter(leafsIterator.next(), Leaf.Color.GREEN, 0.1);
     }
 
     @Test
@@ -65,14 +65,8 @@ public class TreesTest {
         assertBranchSize(branch, 2);
 
         Iterator<Leaf> leafsIterator = branch.leafs.iterator();
-
-        Leaf firstLeaf = leafsIterator.next();
-        assertLeafColor(firstLeaf, Leaf.Color.BROWN);
-        assertLeafDiameter(firstLeaf, 0.2);
-
-        Leaf secondLeaf = leafsIterator.next();
-        assertLeafColor(secondLeaf, Leaf.Color.BROWN);
-        assertLeafDiameter(secondLeaf, 0.2);
+        assertLeafColorAndDiameter(leafsIterator.next(), Leaf.Color.BROWN, 0.2);
+        assertLeafColorAndDiameter(leafsIterator.next(), Leaf.Color.BROWN, 0.2);
     }
 
     private void assertTreeHeight(Tree tree, double height) {
@@ -91,11 +85,8 @@ public class TreesTest {
         assertThat(branch.leafs.size()).isEqualTo(size);
     }
 
-    private void assertLeafColor(Leaf leaf, Leaf.Color color) {
+    private void assertLeafColorAndDiameter(Leaf leaf, Leaf.Color color, double diameter) {
         assertThat(leaf.color).isEqualTo(color);
-    }
-
-    private void assertLeafDiameter(Leaf leaf, double diameter) {
         assertThat(leaf.diameter).isEqualTo(diameter);
     }
 }

@@ -16,9 +16,8 @@ public class CurrencyCodeTest {
         assertThat(amount).isEqualTo(1234500L);
     }
 
-
     @Test
-    public void shouldReturnNullAmountWhenAmountToScaleIsNull() {
+    public void shouldReturnNullAmountWhenScaledAmountIsNull() {
         // given/when
         Long amount = OrderCreateRequest.CurrencyCode.EUR.scaleAmount(null);
 
